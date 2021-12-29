@@ -5,7 +5,7 @@
              xmlns:mvvm="clr-namespace:TinyMvvm.Maui;assembly=TinyMvvm.Maui"
              xmlns:vm="clr-namespace:ResXapp.ViewModels"
              Title="MainView"
-             BackgroundColor="{DynamicResource LightBackground}" x:TypeArguments="vm:MainViewModel" x:DataType="vm:MainViewModel">
+             BackgroundColor="{StaticResource LightBackground}" x:TypeArguments="vm:MainViewModel" x:DataType="vm:MainViewModel">
    <CollectionView Grid.Row="1" ItemsSource="{Binding Items}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="vm:TextViewModel">
