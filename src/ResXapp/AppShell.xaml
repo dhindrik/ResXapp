@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:ResXapp.Views"
+            xmlns:vm="clr-namespace:ResXapp.ViewModels"
+             x:Class="ResXapp.AppShell"
+       xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+    ios:Page.UseSafeArea="True"
+       x:DataType="vm:MenuViewModel"
+       FlyoutBackgroundColor="{DynamicResource LightMenuBackground}"
+       FlyoutBehavior="Locked">
+
+    <ShellContent Title="Home">
+        <ContentPage>
+
+        </ContentPage>
+    </ShellContent>
+
+    <MenuItem Text="Open" Command="{Binding Open, Mode=OneTime}" />
+    <ShellContent Title="Editor">
+        <views:MainView />
+    </ShellContent>
+    <ShellContent Title="Settings">
+        <ContentPage></ContentPage>
+    </ShellContent>
+</Shell>

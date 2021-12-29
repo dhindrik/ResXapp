@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<mvvm:ShellViewBase xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ResXapp.Views.MainView"
+             xmlns:mvvm="clr-namespace:TinyMvvm.Maui;assembly=TinyMvvm.Maui"
+             xmlns:vm="clr-namespace:ResXapp.ViewModels"
+             Title="MainView"
+             BackgroundColor="{DynamicResource LightBackground}" x:TypeArguments="vm:MainViewModel" x:DataType="vm:MainViewModel">
+   <CollectionView Grid.Row="1" ItemsSource="{Binding Items}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="vm:TextViewModel">
+                        <StackLayout Spacing="10" Orientation="Horizontal">
+                            <Entry Text="{Binding Key}" WidthRequest="200" />
+                            <StackLayout Spacing="10" BindableLayout.ItemsSource="{Binding Translations}" Orientation="Horizontal">
+                                <BindableLayout.ItemTemplate>
+                                    <DataTemplate x:DataType="vm:TranslationViewModel">
+                                        <Entry Text="{Binding Text}" WidthRequest="200" />
+                                    </DataTemplate>
+                                </BindableLayout.ItemTemplate>
+                            </StackLayout>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+</mvvm:ShellViewBase>
